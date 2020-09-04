@@ -14,7 +14,7 @@ app.get('/', (req, res) => {
 
 })
 
-app.get('/countryname', (req, res) => {
+app.get('/name', (req, res) => {
   const fuse = new Fuse(countriesData, {
     keys: ["name"],
   });
@@ -36,7 +36,7 @@ app.get('/countryname', (req, res) => {
 
 })
 
-app.get('/countrytel', (req, res) => {
+app.get('/tel', (req, res) => {
   const fuse = new Fuse(countriesData, {
     keys: ["tel"],
   });
