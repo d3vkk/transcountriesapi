@@ -11,7 +11,7 @@ app.use((req, res, next) => {
 });
 
 app.get('/', (req, res) => {
-
+  res.redirect('https://github.com/d3vkk/transcountriesapi');
 })
 
 app.get('/name', (req, res) => {
