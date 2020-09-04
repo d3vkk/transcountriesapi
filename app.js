@@ -21,17 +21,17 @@ app.get('/countryname', (req, res) => {
 
   const searchResults = fuse.search(req.query.name);
   if (searchResults != []) {
-    res.json(JSON.stringify({
+    res.json({
       found: true,
       message: 'Country found',
       country: searchResults[0].item
-    }));
+    });
   } else {
-    res.json(JSON.stringify({
+    res.json({
       found: false,
       message: 'Country NOT found',
       country: [],
-    }));
+    });
   }
 
 })
@@ -43,18 +43,18 @@ app.get('/countrytel', (req, res) => {
 
   const searchResults = fuse.search(req.query.tel);
   if (searchResults != []) {
-    res.json(JSON.stringify({
+    res.json({
       found: true,
       message: 'Country found',
       country: searchResults[0].item,
-    }));
+    });
 
   } else {
-    res.json(JSON.stringify({
+    res.json({
       found: false,
       message: 'Country NOT found',
       country: [],
-    }));
+    });
   }
 
 })
