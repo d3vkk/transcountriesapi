@@ -36,5 +36,28 @@ app.get('/countryname', (req, res) => {
 
 })
 
+app.get('/countrytel', (req, res) => {
+  const fuse = new Fuse(countriesData, {
+    keys: ["tel"],
+  });
+
+  const searchResults = fuse.search(req.query.tel);
+  if (searchResults != []) {
+    res.json(JSON.stringify({
+      found: true,
+      message: 'Country found',
+      country: searchResults[0].item,
+    }));
+
+  } else {
+    res.json(JSON.stringify({
+      found: false,
+      message: 'Country NOT found',
+      country: [],
+    }));
+  }
+
+})
+
 const port = process.env.PORT || 3000;
 app.listen(port, () => console.log(`App running on 127.0.0.1:${port}`));
