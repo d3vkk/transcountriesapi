@@ -1,3 +1,7 @@
+var countriesData = require('./countries.js');
+countriesData = countriesData.data.country;
+
+const Fuse = require("fuse.js");
 const express = require("express");
 const app = express();
 
@@ -7,6 +11,28 @@ app.use((req, res, next) => {
 });
 
 app.get('/', (req, res) => {
+
+})
+
+app.get('/countryname', (req, res) => {
+  const fuse = new Fuse(countriesData, {
+    keys: ["name"],
+  });
+
+  const searchResults = fuse.search(req.query.name);
+  if (searchResults != []) {
+    res.json(JSON.stringify({
+      found: true,
+      message: 'Country found',
+      country: searchResults[0].item
+    }));
+  } else {
+    res.json(JSON.stringify({
+      found: false,
+      message: 'Country NOT found',
+      country: [],
+    }));
+  }
 
 })
 
