@@ -46,4 +46,4 @@ Response
 ```
 
 
-© 2020 Donald K • Under MIT License
+© 2020-present Donald K • Under MIT License
