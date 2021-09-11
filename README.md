@@ -2,11 +2,11 @@
 
 ![TransCountries API Logo](https://github.com/d3vkk/transcountries-api/blob/master/trans-countries-logo.png)
 
-Get Country names, Telephone codes and Acronyms. Built with Node.js, Express & Fuse.js
+Get Country names, Telephone codes and Acronyms. Built with Node.js, Express & Fuse.js. Data scraped with Python
 
 ## Methods
 
-### Country Name Search
+### Country Name Search 
 
 URL
 
