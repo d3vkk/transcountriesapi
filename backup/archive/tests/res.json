@@ -1,0 +1,9 @@
+{
+  "found": true,
+  "message": "Country found",
+  "country": {
+    "name": "Iceland",
+    "tel": "354",
+    "acronym": "IS / ISL"
+  }
+}
